@@ -1,0 +1,463 @@
+/* ==========================================================================
+   SUMÁRIO
+   ==========================================================================
+   1. Definições de Fontes, Variáveis e Reset Geral
+   2. Cabeçalho e Navegação
+   3. Estrutura Principal e Seções
+   4. Seção Início (Hero)
+   5. Seção Sobre Mim
+   6. Timeline da Jornada
+   7. Seção de Habilidades
+   8. Seção de Projetos
+   9. Seção de Comentários (Disqus)
+   10. Seção de Contato
+   11. Rodapé
+   12. Estilos do Blog (Listagem e Posts)
+   13. Página 404 Personalizada
+   14. Animações e Microinterações
+   15. Responsividade (Media Queries)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Definições de Fontes, Variáveis e Reset Geral
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@100..400&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --cor-fundo: #FFF0F3;
+    --cor-fundo-secundario: #FFCCD5;
+    --cor-texto: #590D22;
+    --cor-titulo: #A4133C;
+    --cor-destaque: #FF4D6D;
+    --cor-destaque-hover: #C9184A;
+    --cor-texto-botao: #FFF0F3;
+    --fonte-titulo: 'Playwrite ES', cursive;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+[data-theme="dark"] {
+    --cor-fundo: #590D22;
+    --cor-fundo-secundario: #800F2F;
+    --cor-texto: #FFCCD5;
+    --cor-titulo: #FFF0F3;
+    --cor-destaque: #FF8FA3;
+    --cor-destaque-hover: #FFB3C1;
+    --cor-texto-botao: #590D22;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================================================
+   2. Cabeçalho e Navegação
+   ========================================================================== */
+header {
+    background-color: var(--cor-fundo-secundario);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-titulo);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+#theme-switcher {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   3. Estrutura Principal e Seções
+   ========================================================================== */
+main {
+    padding-top: 80px; 
+}
+
+section {
+    padding: 5rem 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h1, section h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+}
+
+/* ==========================================================================
+   4. Seção Início (Hero)
+   ========================================================================== */
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid var(--cor-destaque);
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#inicio h2 {
+    font-family: var(--fonte-corpo);
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   5. Seção Sobre Mim
+   ========================================================================== */
+#sobre p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   6. Timeline da Jornada
+   ========================================================================== */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--cor-destaque);
+    opacity: 0.3;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: ' ';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--cor-fundo);
+    border: 4px solid var(--cor-destaque);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+.timeline-item:nth-child(even)::after { left: -10px; }
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: var(--cor-fundo-secundario);
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--cor-destaque-hover);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.timeline-content h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-titulo);
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   7. Seção de Habilidades
+   ========================================================================== */
+#habilidades h3 {
+    font-family: var(--fonte-corpo);
+    color: var(--cor-titulo);
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1.5rem;
+}
+
+.skills-grid, .languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card, .language-card {
+    background-color: var(--cor-fundo);
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover, .language-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.skill-card i {
+    font-size: 4rem;
+    color: var(--cor-titulo);
+    transition: color 0.3s ease;
+}
+
+.skill-card p { font-weight: bold; }
+.skill-card:hover i { color: var(--cor-destaque); }
+.language-card h4 { color: var(--cor-titulo); font-size: 1.2rem; }
+.language-card p { font-size: 1rem; }
+
+/* ==========================================================================
+   8. Seção de Projetos
+   ========================================================================== */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.card-projeto {
+    background-color: var(--cor-fundo-secundario);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-projeto img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.card-projeto h3 { color: var(--cor-titulo); margin: 1.5rem 1.5rem 0; font-size: 1.5rem; }
+.card-projeto p { margin: 0.5rem 1.5rem; min-height: 80px; }
+
+.tags-tecnologias { margin: 1rem 1.5rem; }
+.tags-tecnologias span {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-botao);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+}
+
+.links-projeto { padding: 0 1.5rem 1.5rem; margin-top: 1rem; }
+.links-projeto a {
+    background-color: var(--cor-titulo);
+    color: var(--cor-texto-botao);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.links-projeto .btn-disabled { background-color: #a0a0a0; cursor: not-allowed; }
+
+/* ==========================================================================
+   9. Seção de Comentários (Disqus)
+   ========================================================================== */
+#comentarios {
+    background-color: var(--cor-fundo);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* ==========================================================================
+   10. Seção de Contato
+   ========================================================================== */
+.container-contatos {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.container-contatos img { width: 50px; }
+
+/* ==========================================================================
+   11. Rodapé
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--cor-fundo-secundario);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   12. Estilos do Blog (Listagem e Posts)
+   ========================================================================== */
+.container { max-width: 900px; margin: 0 auto; padding: 2rem 5%; }
+.blog-header { background-color: var(--cor-fundo); border-bottom: 1px solid var(--cor-fundo-secundario); padding: 1rem 5%; }
+.subtitle { font-size: 1.2rem; color: var(--cor-texto); max-width: 600px; margin: -1rem auto 3rem; }
+.post-list { display: grid; gap: 2.5rem; }
+
+.post-preview {
+    background-color: var(--cor-fundo-secundario);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post-preview:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+.post-date { font-size: 0.9rem; color: var(--cor-destaque); font-weight: bold; margin-bottom: 0.5rem; }
+.post-preview h2 a { font-family: var(--fonte-titulo); text-decoration: none; color: var(--cor-titulo); font-size: 2rem; }
+.post-excerpt { margin: 1rem 0; }
+.btn-read-more { font-weight: bold; color: var(--cor-destaque-hover); text-decoration: none; }
+
+.post-full .post-header { text-align: center; margin-bottom: 3rem; }
+.post-full h1 { font-family: var(--fonte-titulo); color: var(--cor-titulo); font-size: 3rem; line-height: 1.2; }
+.post-meta { margin-top: 1rem; font-weight: bold; color: var(--cor-texto); }
+.post-content { font-size: 1.1rem; line-height: 1.8; text-align: left; }
+.post-content h2, .post-content h3 { font-family: var(--fonte-titulo); color: var(--cor-titulo); margin: 2.5rem 0 1rem; }
+.post-content blockquote { border-left: 4px solid var(--cor-destaque); padding-left: 1.5rem; margin: 2rem; font-style: italic; }
+.post-content pre { background-color: #2d2d2d; color: #f8f8f2; padding: 1.5rem; border-radius: 10px; overflow-x: auto; margin: 2rem 0; }
+.post-comments { margin-top: 4rem; text-align: center; }
+
+/* ==========================================================================
+   13. Página 404 Personalizada
+   ========================================================================== */
+.body-404 { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 1rem; }
+.error-container { max-width: 600px; text-align: center; }
+.ghost-illustration { margin-bottom: 2rem; animation: float-animation 4s ease-in-out infinite; }
+.error-container h1 { font-family: var(--fonte-titulo); font-size: 4rem; color: var(--cor-titulo); margin: 0; }
+.error-container p { font-size: 1.1rem; margin: 1rem 0; }
+.btn-home {
+    display: inline-block;
+    background-color: var(--cor-titulo);
+    color: var(--cor-texto-botao);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   14. Animações e Microinterações
+   ========================================================================== */
+#inicio {
+    background: linear-gradient(45deg, var(--cor-fundo), var(--cor-fundo-secundario));
+    background-size: 200% 200%;
+    animation: gradient-animation 15s ease infinite;
+}
+@keyframes gradient-animation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes float-animation { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
+.links-projeto a, .btn-home {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.links-projeto a:hover, .btn-home:hover {
+    background-color: var(--cor-destaque-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.container-contatos a img { transition: transform 0.4s ease-in-out; }
+.container-contatos a:hover img { transform: scale(1.2) rotate(15deg) translateY(-5px); }
+
+/* ==========================================================================
+   15. Responsividade (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Em um projeto maior, aqui entraria um menu hamburguer */
+    section { padding: 4rem 5%; }
+    section h1 { font-size: 2.2rem; }
+    section h2 { font-size: 2rem; }
+    .foto-perfil { width: 150px; height: 150px; }
+    
+    .timeline-container::after { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 50px; padding-right: 15px; }
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; text-align: left; }
+    .timeline-item::after { left: 10px; }
+
+    .post-full h1 { font-size: 2.5rem; }
+}

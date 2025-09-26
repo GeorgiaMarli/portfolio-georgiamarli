@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Título do Post | Blog Georgia Marli</title>
+
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-flor.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@100..400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="blog-header">
+        <nav>
+            <a href="../index.html" class="logo">Georgia Marli</a>
+            <ul>
+                <li><a href="../index.html">Portfólio</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+            </ul>
+            <button id="theme-switcher">🌙</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="post-full">
+            <header class="post-header">
+                <h1>Título do Seu Incrível Post</h1>
+                <div class="post-meta">
+                    <span>Por Georgia Marli</span> | <span>26 de Setembro, 2025</span>
+                </div>
+            </header>
+
+            <div class="post-content">
+                <p>Este é o parágrafo de introdução do seu texto. Fale um pouco sobre o que você vai abordar e prenda a atenção do leitor. É uma boa prática começar com uma pergunta ou uma afirmação interessante.</p>
+                
+                <img src="../assets/images/placeholder-post.png" alt="Descrição da Imagem do Post">
+                <p><small><em>Você pode adicionar imagens ao seu post. Lembre-se de colocá-las na pasta /assets/images e usar o caminho ../</em></small></p>
+
+                <h2>Este é um Subtítulo (H2)</h2>
+                <p>Você pode usar parágrafos para desenvolver suas ideias. Tente manter os parágrafos curtos e diretos para facilitar a leitura. Escreva sobre suas experiências, desafios e o que você aprendeu com eles.</p>
+                
+                <blockquote>Esta é uma citação em destaque. Use-a para destacar uma frase importante, uma citação de outra pessoa ou um insight poderoso que você teve.</blockquote>
+                
+                <h3>Formatando código (H3)</h3>
+                <p>Para um blog de tecnologia, mostrar código é essencial. É uma das melhores formas de ensinar e demonstrar seu conhecimento. Use a tag <code>&lt;pre&gt;&lt;code&gt;</code> para blocos de código, como no exemplo abaixo:</p>
+                
+                <pre><code class="language-javascript">
+// Exemplo de um bloco de código em JavaScript
+function createPortfolio() {
+  const elements = ['header', 'main', 'footer'];
+  let portfolio = '';
+
+  elements.forEach(element => {
+    portfolio += `<${element}></${element}>`;
+  });
+
+  return portfolio;
+}
+
+// Chame a função para ver a mágica acontecer!
+createPortfolio();
+                </code></pre>
+                
+                <p>Este é o parágrafo de conclusão. Resuma as ideias principais do seu post e, se possível, termine com uma pergunta para incentivar os leitores a deixarem um comentário na seção abaixo.</p>
+            </div>
+        </article>
+        
+        <section id="comentarios" class="post-comments">
+            <h2>Deixe um Comentário! 💬</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                // CONFIGURAÇÃO RECOMENDADA DO DISQUS PARA PÁGINAS DE POST
+                var disqus_config = function () {
+                    this.page.url = window.location.href;  // Usa a URL da página atual como identificador
+                    this.page.identifier = window.location.href; // Garante que cada post tenha sua própria thread de comentários
+                };
+                
+                (function() { // NÃO EDITE ABAIXO DESTA LINHA
+                var d = document, s = d.createElement('script');
+                // !!!!! IMPORTANTE !!!!!
+                // TROQUE 'SEU_SHORTNAME' PELO SHORTNAME QUE VOCÊ CRIOU NO SITE DO DISQUS
+                s.src = 'https://portfolio-georgia.disqus.com/embed.js'; 
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Por favor, habilite o JavaScript para ver os <a href="https://disqus.com/?ref_noscript">comentários via Disqus.</a></noscript>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito com ❤️ por Georgia Marli &copy; 2025</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

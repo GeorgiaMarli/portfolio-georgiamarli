@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Georgia Marli</title>
+    <meta name="description" content="Um espaço para compartilhar minha jornada, estudos e descobertas no mundo da tecnologia e desenvolvimento de sistemas.">
+
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2267/2267499.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@100..400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="blog-header">
+        <nav>
+            <a href="index.html" class="logo">Georgia Marli</a>
+            <ul>
+                <li><a href="index.html">Portfólio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <button id="theme-switcher">🌙</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="blog-list">
+            <h1 data-aos="fade-up">Meu Blog 📝</h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Aqui compartilho um pouco da minha jornada, estudos e descobertas no universo da programação e da tecnologia.</p>
+
+            <div class="post-list">
+                
+                <article class="post-preview" data-aos="fade-up" data-aos-delay="200">
+                    <div class="post-preview-content">
+                        <p class="post-date">26 de Setembro, 2025</p>
+                        <h2><a href="posts/como-criei-meu-portfolio.html">Como Criei Meu Portfólio do Zero com HTML, CSS e JS</a></h2>
+                        <p class="post-excerpt">Neste post, vou detalhar todo o processo de criação deste portfólio, desde a escolha das cores e fontes até a implementação do modo escuro, das animações e da seção de blog que você está lendo agora. Uma jornada completa pelo desenvolvimento front-end.</p>
+                        <a href="posts/como-criei-meu-portfolio.html" class="btn-read-more">Ler Mais &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="post-preview" data-aos="fade-up" data-aos-delay="300">
+                    <div class="post-preview-content">
+                        <p class="post-date">15 de Julho, 2025</p>
+                        <h2><a href="posts/5-coisas-que-aprendi.html">5 Coisas que Aprendi no Meu Primeiro Ano de Análise e Desenvolvimento de Sistemas</a></h2>
+                        <p class="post-excerpt">A faculdade tem sido uma jornada intensa e cheia de aprendizados. Compilei aqui os 5 insights mais valiosos que tive até agora, desde a importância da lógica de programação até como colaborar efetivamente em projetos de equipe.</p>
+                        <a href="posts/5-coisas-que-aprendi.html" class="btn-read-more">Ler Mais &rarr;</a>
+                    </div>
+                </article>
+
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito com ❤️ por Georgia Marli &copy; 2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
